@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        TTC Service Site
+        </title>
+        
+    </head>
+    <body>
+        <div id="banner">
+            <img id="left-img" src="assets/images/ttc.jpg" />
+            
+            <h1>
+            TTC News
+            </h1>
+        
+        </div>
+        
+        <div class="page-container">
+            <table>
+                <tr class="row" *ngFor='let n of news'>
+                    <td>
+                        <p>{{ n.date }}</p>
+                        <p>{{ n.author }}</p>
+                        <p>{{ n.title }}</p>
+                        
+                    </td>
+                </tr>
+                
+                
+            </table>
+            
+            
+        </div>
+        
+        <div id="contact">
+            <p>Follow TTC Service Alerts for more news</p>
+            <a href="https://twitter.com/TTCnotices">
+                <img id="twitter" src="assets/images/twitter.png">
+            </a>
+        </div>
+        
+        <footer>
+            <nav id="bottom-nav">
+                <a>Contact Us</a>            
+                <a>Privacy Policy</a>
+                <a>Jobs</a>
+            </nav>
+        
+            <p>TTC 2019</p>
+        </footer>
+    </body>
+</html>

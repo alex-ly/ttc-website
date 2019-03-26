@@ -1,0 +1,27 @@
+        <h1>Create Account</h1>
+        <!-- <form action="/register" method="post"> -->
+        <form class="form-signin" #f="ngForm" (ngSubmit)="register(f.value)">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Username" required ngModel>
+            <br />
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" required ngModel>
+            <br />
+            <label for="surname">Surname</label>
+            <input type="text" name="surname" id="surname" placeholder="Surname" required ngModel>
+            <br />
+            <label for="type">User type</label>
+            <input type="text" name="type" id="type" placeholder="User type" required ngModel (change)="checkAdmin(t)" #t="ngModel">
+            <br />
+            <div *ngIf="admin">
+                <label for="adminPass">Confirm Admin</label>
+                <input type="password" name="adminPass" id="adminPass" placeholder="Admin Password" required ngModel>                    
+            </div>
+            <input type="password" name="password" id="password" placeholder="Password" required ngModel>
+            <br />
+            <input type="password" name="password2" id="password2" placeholder="Confirm password" required ngModel>
+            <br />
+            
+            
+            <button id="registerBtn" class="btn btn-primary" type="submit">Register</button>
+        </form>

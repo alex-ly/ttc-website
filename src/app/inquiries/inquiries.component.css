@@ -1,0 +1,107 @@
+#banner{
+    border: solid 5px black;
+    text-align: center;
+    margin-bottom: 10px;
+    height: 100px;
+    background: white;
+    font-family: "Courier New"
+}
+
+body{
+    background: #990000;
+}
+
+a{
+    padding: 5px;
+    color: black;
+    font-family: Verdana;
+}
+
+nav{
+    background: #ff9966;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: solid 2px black;
+}
+
+table{
+    background: white;
+    border: solid 2px black;
+    width: 100%;
+}
+
+td{
+    
+    border-bottom: solid 2px black;
+    padding: 20px;
+}
+
+footer{
+    background: white;
+    width:100%;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    border-top:solid 5px black;
+    font-family: "Trebuchet MS";
+}
+
+.curr-page{
+    background: yellow;
+}
+
+.page-container{
+    margin-top: 50px;
+    
+    overflow-y: scroll;
+    height: 500px;
+    
+}
+
+#left-img{
+    float:left;
+    height: 100%
+}
+
+#contact{
+    margin-top: 20px;
+    margin-bottom: 100px;
+    text-align: center;
+    background: white;
+    width: 150px;
+    padding: 5px 15px 5px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 2px black;
+}
+
+#twitter{
+    width:100%;
+    margin-right: 5px;
+        
+}
+
+.hide{
+    display: none;
+}
+
+#logoutBtn{
+    /* //position: absolute; */
+    margin-right: 30px;
+    margin-top: 10px;
+    width: 70px;
+    height: 20px;
+    float: right;
+}
+
+
+@media only screen and (max-width: 640px){
+    .page-container{
+        font-size: 10px;
+    }
+    
+}
+
+td{
+    width: 100%;
+}

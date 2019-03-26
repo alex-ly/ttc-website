@@ -1,0 +1,12 @@
+<!-- <form action="/sendComment" method="post"> -->
+<form class="form-control" (ngSubmit)="submit(f.value)" #f="ngForm">
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" placeholder="Subject" ngModel>
+    <br />
+            
+    <!--<input type="text" name="content" id="content" placeholder="Comment here">
+    -->
+    <textarea name="content" id="content" placeholder="Comment here" ngModel required></textarea>
+    <br />
+    <button id="submitBtn" class="btn btn-primary">Submit</button>
+</form>

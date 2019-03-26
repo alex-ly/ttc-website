@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TTC service site</title>
+  </head>
+  <body>
+    <div id="banner">
+      <img src="assets/images/ttc.jpg" alt="ttc" id="left-img"/>
+      <h1>Inquiries</h1>
+    </div>
+    <div class="page-container">
+      <table>
+        <tbody>
+          <tr class="row" *ngFor="let i of inquiries">
+            <td>
+              <h4>{{ i.subject }}</h4>
+              <p>{{ i.date }}</p>
+              <p>{{ i.body }}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

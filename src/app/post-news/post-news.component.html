@@ -1,0 +1,10 @@
+<form class='form-signin' #f="ngForm" (ngSubmit)='submit(f.value)'>
+  <input type='text' id="username" name='username' placeholder='Username' required ngModel>
+      <br>      
+      <textarea id="subject" name='subject' placeholder='Title' required ngModel></textarea>
+      <br>
+      
+      <button id="submitBtn" class="btn btn-primary" type="submit">Post</button>
+
+</form>
+      
