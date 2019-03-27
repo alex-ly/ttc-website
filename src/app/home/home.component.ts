@@ -1,3 +1,4 @@
+import { LoginService } from './../login.service';
 import { DBService } from './../db.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -22,10 +23,12 @@ export class HomeComponent implements OnInit{
     this.service.getInquiries().subscribe(res =>{
       this.inquiries=res.json();
     });
+    //console.log(this.loginService.currentUser);
     
   }
 
-  constructor(private service:DBService) { }
+  constructor(private service:DBService,
+    ) { }
 
   
 }

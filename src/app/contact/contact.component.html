@@ -1,12 +1,18 @@
-<!-- <form action="/sendComment" method="post"> -->
-<form class="form-control" (ngSubmit)="submit(f.value)" #f="ngForm">
-    <label for="subject">Subject:</label>
-    <input type="text" name="subject" id="subject" placeholder="Subject" ngModel>
+<div id="banner">
+    <img id="left-img" src="assets/images/ttc.jpg" />
+    <h1>Contact TTC</h1>
+
+</div>
+<div *ngIf="invalid" class="alert alert-danger">Invalid inquiry.</div>
+    
+<form class="form-signin" (ngSubmit)="submit(f.value)" #f="ngForm">
+    <!-- <label for="subject">Subject:</label> -->
+    <input type="text" name="subject" id="subject" placeholder="Subject" class="form-control" ngModel required>
     <br />
             
     <!--<input type="text" name="content" id="content" placeholder="Comment here">
     -->
-    <textarea name="content" id="content" placeholder="Comment here" ngModel required></textarea>
+    <textarea name="content" id="content" placeholder="Comment here" class="form-control" ngModel required></textarea>
     <br />
-    <button id="submitBtn" class="btn btn-primary">Submit</button>
+    <button id="submitBtn" class="btn btn-primary" type="submit" [disabled]="invalid">Submit</button>
 </form>

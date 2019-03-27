@@ -1,10 +1,14 @@
+<div id="banner">
+    <img src="assets/images/ttc.jpg" alt="ttc" id="left-img"/>
+    <h1>Post News</h1>
+</div>   
 <form class='form-signin' #f="ngForm" (ngSubmit)='submit(f.value)'>
-  <input type='text' id="username" name='username' placeholder='Username' required ngModel>
-      <br>      
-      <textarea id="subject" name='subject' placeholder='Title' required ngModel></textarea>
-      <br>
-      
-      <button id="submitBtn" class="btn btn-primary" type="submit">Post</button>
+    <!-- <input type='text' id="username" name='username' placeholder='Username' required ngModel class="form-control" />
+    <br />       -->
+    <textarea id="subject" name='subject' placeholder='Title' required ngModel class="form-control"></textarea>
+    <br />
+
+    <button id="submitBtn" class="btn btn-primary" type="submit">Post</button>
 
 </form>
       

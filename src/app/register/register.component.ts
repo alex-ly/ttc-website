@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   invalidLogin:boolean;
   admin:boolean;
+  type:string;
 
 
   constructor(private router:Router,
@@ -17,23 +18,48 @@ export class RegisterComponent {
 
 
   register(credentials){
-    this.loginService.register(credentials)
-      
-        .subscribe(result => { 
-          if (result){
-            //console.log(this.loginService.currentUser);
-            
-            this.router.navigate(['/']);
-          }else  
-            this.invalidLogin = true; 
-        });
-    }
+    this.checkValid(credentials);
+    if(!this.invalidLogin){
+      this.loginService.register(credentials)
+    
+      .subscribe(result => { 
+        if (result){
+          //console.log(this.loginService.currentUser);
+          
+          this.router.navigate(['/']);
+        }else  
+          this.invalidLogin = true; 
+      });
 
-  checkAdmin(input:HTMLInputElement){
-    if(input.value=='admin'){
+
+    }
+    
+    
+    
+  }
+
+  checkAdmin(){
+    console.log(this.type);
+    
+    if(this.type=='Admin'){
       this.admin=true;
     }else{
       this.admin=false;
+    }
+
+  }
+
+  checkValid(credentials){
+    if(credentials.username=="" 
+    || credentials.firstName==""
+    || credentials.surname==""
+    || credentials.password==""
+    || this.type==""){
+      //console.log('hi');
+      
+      this.invalidLogin=true;
+    }else{
+      this.invalidLogin=false;
     }
 
   }

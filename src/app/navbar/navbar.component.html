@@ -20,7 +20,7 @@
             <a class="nav-link" routerLink="/news">News <span class="sr-only">(current)</span></a>
           </li>
         <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" routerLink="/shop">Shop</a>
+          <a class="nav-link" routerLink="/shop">Prices</a>
         </li>
         <li class="nav-item" routerLinkActive="active current">
           <a class="nav-link" routerLink="/about">About <span class="sr-only">(current)</span></a>
@@ -28,13 +28,13 @@
         <!-- <li class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/contact">Contact</a>
         </li> -->
-        <li *ngIf="loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
+        <li *ngIf="!loginService.getAdmin() && loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/contact">Contact</a>
         </li>
-        <li *ngIf="loginService.admin" class="nav-item" routerLinkActive="active current">
+        <li *ngIf="loginService.getAdmin()" class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/postNews">Post News</a>
         </li>
-        <li *ngIf="loginService.admin" class="nav-item" routerLinkActive="active current">
+        <li *ngIf="loginService.getLoggedIn()" class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/inquiries">Inquiries</a>
         </li>
           

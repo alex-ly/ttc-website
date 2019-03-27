@@ -28,22 +28,35 @@ table{
     background: white;
     border: solid 2px black;
     width: 100%;
+    
 }
+
 
 td{
     
-    border-bottom: solid 2px black;
+    /* border-bottom: solid 2px black; */
     padding: 20px;
+    width: inherit;
+    border-bottom: solid 2px black;    
+    
 }
 
-footer{
-    background: white;
-    width:100%;
-    position: fixed;
-    bottom: 0px;
-    text-align: center;
-    border-top:solid 5px black;
-    font-family: "Trebuchet MS";
+#userType{
+    width: inherit;
+}
+
+#active{
+    width:inherit;
+}
+
+
+.row{
+    border-bottom: solid 2px black;    
+    width: 100%;
+    /* margin-left: 10px; */
+    padding: 10px;
+    display: block;
+
 }
 
 .curr-page{
@@ -51,10 +64,11 @@ footer{
 }
 
 .page-container{
-    margin-top: 50px;
+    margin: 50px 10px 100px 10px;
     
     overflow-y: scroll;
     height: 500px;
+    /* background-color: #990000; */
     
 }
 
@@ -63,35 +77,8 @@ footer{
     height: 100%
 }
 
-#contact{
-    margin-top: 20px;
-    margin-bottom: 100px;
-    text-align: center;
-    background: white;
-    width: 150px;
-    padding: 5px 15px 5px 5px;
-    margin-left: auto;
-    margin-right: auto;
-    border: solid 2px black;
-}
-
-#twitter{
-    width:100%;
-    margin-right: 5px;
-        
-}
-
 .hide{
     display: none;
-}
-
-#logoutBtn{
-    /* //position: absolute; */
-    margin-right: 30px;
-    margin-top: 10px;
-    width: 70px;
-    height: 20px;
-    float: right;
 }
 
 
@@ -102,6 +89,25 @@ footer{
     
 }
 
-td{
-    width: 100%;
+
+#deleteBtn{
+    margin: 5px 0px 0px 30px;
+}
+
+#reply{
+    border-bottom: solid 2px black;
+    margin-top: 10px;
+}
+
+#replies{
+    border: solid 2px black;
+    border-radius: 5px;
+    margin-left: 20px;
+    overflow-y: scroll;
+    height: 200px;
+    
+}
+
+#data, #h{
+    margin-left: 20px; 
 }

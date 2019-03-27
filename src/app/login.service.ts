@@ -100,10 +100,17 @@ export class LoginService {
   logout(){
     localStorage.removeItem('token');
     this.currentUser=null;
+    this.admin=false;
+
     this.router.navigate(['/']);
   }
 
   getLoggedIn(){
     return tokenNotExpired('token');
+  }
+
+  getAdmin(){
+    if(this.currentUser==null) return false;
+    return this.currentUser.admin;
   }
 }

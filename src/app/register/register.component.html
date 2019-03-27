@@ -1,27 +1,42 @@
-        <h1>Create Account</h1>
-        <!-- <form action="/register" method="post"> -->
-        <form class="form-signin" #f="ngForm" (ngSubmit)="register(f.value)">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="Username" required ngModel>
-            <br />
-            <label for="firstName">First Name:</label>
-            <input type="text" name="firstName" id="firstName" placeholder="First Name" required ngModel>
-            <br />
-            <label for="surname">Surname</label>
-            <input type="text" name="surname" id="surname" placeholder="Surname" required ngModel>
-            <br />
-            <label for="type">User type</label>
-            <input type="text" name="type" id="type" placeholder="User type" required ngModel (change)="checkAdmin(t)" #t="ngModel">
-            <br />
-            <div *ngIf="admin">
-                <label for="adminPass">Confirm Admin</label>
-                <input type="password" name="adminPass" id="adminPass" placeholder="Admin Password" required ngModel>                    
-            </div>
-            <input type="password" name="password" id="password" placeholder="Password" required ngModel>
-            <br />
-            <input type="password" name="password2" id="password2" placeholder="Confirm password" required ngModel>
-            <br />
-            
-            
-            <button id="registerBtn" class="btn btn-primary" type="submit">Register</button>
-        </form>
+<div id="banner">
+    <img src="assets/images/ttc.jpg" alt="ttc" id="left-img"/>
+    <h1>Register</h1>
+</div>
+      
+<div *ngIf="invalidLogin" class="alert alert-danger">Invalid credentials.</div>
+  
+<form class="form-signin" #f="ngForm" (ngSubmit)="register(f.value)">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" placeholder="Username" ngModel class="form-control" required minlength="1" (change)="checkValid(f.value)">
+    <br />
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" id="firstName" placeholder="First Name" ngModel class="form-control" required minlength="1" (change)="checkValid(f.value)">
+    <br />
+    <label for="surname">Surname</label>
+    <input type="text" name="surname" id="surname" placeholder="Surname" ngModel class="form-control" required minlength="1" (change)="checkValid(f.value)">
+    <br />
+    <label for="type">User type</label>
+    <select class="form-control" id="type" [(ngModel)]="type" (change)="checkAdmin()"  name="type" required>
+        <option>Admin</option>
+        <div class="dropdown-divider"></div>
+        <option>Rider</option>
+        
+    </select>
+    <!-- <input type="text" name="type" id="type" placeholder="User type" required ngModel (change)="checkAdmin(t)" #t="ngModel"> -->
+    <div *ngIf="admin" id="admin">
+        <br />
+        <label for="adminPass">Confirm Admin</label>
+        <input type="password" name="adminPass" id="adminPass" placeholder="Admin Password" ngModel class="form-control" required minlength="1">                    
+    </div>
+    <br />
+    
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" placeholder="Password" ngModel class="form-control" required minlength="1" (change)="checkValid(f.value)">
+    <br />
+    <label for="password2">Retype password</label>
+    <input type="password" name="password2" id="password2" placeholder="Confirm password" ngModel class="form-control">
+    <br />
+    
+    
+    <button id="registerBtn" class="btn btn-primary" type="submit" [disabled]="invalidLogin">Register</button>
+</form>

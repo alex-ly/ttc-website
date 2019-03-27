@@ -4,6 +4,7 @@
 
 .page-container{
     margin: 0 auto;
+    height: 100%;
     
     /*float: left;
 */
@@ -43,12 +44,11 @@ table{
     background: white;
 }
 
-/*
-tbody{
-    width:100%;
-}
-*/
 
+body{
+    background-color: #990000;
+    height:100%;
+}
 
 
 #banner{
@@ -71,7 +71,7 @@ tbody{
 }
 
 .left{
-    width: 200px;
+    width: 20%;
     float: left;
     margin-right: 10px;
     margin-bottom: 100px;
@@ -95,10 +95,10 @@ body{
 }
 
 .data{
-    padding: 20px;
+    padding: 20px 10px;
     border-bottom: solid 2px black;
     width: 100%;
-    margin-left: 20px;
+    margin-left: 27px;
     
 }
 
@@ -143,14 +143,6 @@ footer{
     display: none;
 }
 
-#logoutBtn{
-    /* //position: absolute; */
-    margin-right: 30px;
-    margin-top: 10px;
-    width: 70px;
-    height: 20px;
-    float: right;
-}
 
 @media only screen and (max-width: 800px){
     .right{
@@ -166,4 +158,8 @@ footer{
 
 h1{
     height: 100%;
+}
+
+#table-left{
+    width: 100%;
 }

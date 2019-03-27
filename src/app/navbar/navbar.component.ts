@@ -11,6 +11,8 @@ export class NavbarComponent implements OnInit {
   constructor(private loginService:LoginService) { }
 
   ngOnInit() {
+    console.log(this.loginService.currentUser);
+    
 
   }
 

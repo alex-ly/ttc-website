@@ -1,25 +1,75 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>TTC service site</title>
   </head>
-  <body>
+  <body> -->
     <div id="banner">
       <img src="assets/images/ttc.jpg" alt="ttc" id="left-img"/>
       <h1>Inquiries</h1>
     </div>
     <div class="page-container">
       <table>
-        <tbody>
-          <tr class="row" *ngFor="let i of inquiries">
-            <td>
-              <h4>{{ i.subject }}</h4>
-              <p>{{ i.date }}</p>
-              <p>{{ i.body }}</p>
-            </td>
-          </tr>
-        </tbody>
+          <div *ngIf="loginService.getAdmin() && !isEmpty(inquiries)" id="userType">
+              <div class="row" *ngFor="let i of inquiries" >
+                  <div *ngIf="isActive(i)" id="active">
+                    <button id="deleteBtn" (click)="delete(i)" class="btn btn-secondary">Delete Inquiry</button>
+                      <h4 id="data">Subject: {{ i.subject }}</h4>
+                      <br />
+
+                      <p id="data"><b>Date sent:</b> {{ i.date }}</p>
+                      <p id="data"><b>Body:</b> {{ i.body }}</p>
+                      <div id="h">
+                          <h5>Reply:</h5> 
+                          <input type="text" class="form-control" placeholder="Reply here" (keyup.enter) = "replyPost(reply, i)" #reply />
+                      
+                      </div>
+                      <div *ngIf="!isEmpty(i.replies)" id="h">
+                          <h4>Replies:</h4>
+
+                      </div>
+                      <div *ngIf="!isEmpty(i.replies)" id="replies">
+                        <div *ngFor="let j of i.replies" id="reply">
+                          <p id="data">{{j.date}}</p>
+                          <p id="data"><b>{{j.username}}:</b> {{j.comment}}</p>
+                        </div>
+  
+                      </div>    
+                                      
+                  </div>
+                  
+                </div>
+          </div>
+          <h2 *ngIf="!loginService.getAdmin() && isEmpty(userInquiries)" id="userType"> No inquiries
+          </h2>
+          <div *ngIf="!loginService.getAdmin() && !isEmpty(userInquiries)" id="userType">
+              <div class="row" *ngFor="let i of userInquiries">
+                <h4 id="data">Subject: {{ i.subject }}</h4>
+                <br />
+                <p id="data">Date sent: {{ i.date }}</p>
+                <p id="data">Body: {{ i.body }}</p>
+                <p id="data">Resolved: {{!i.active}}</p>
+                <div *ngIf="!isEmpty(i.replies)" id="h">
+                    <h4>Replies:</h4>                  
+
+                </div>
+                <div *ngIf="!isEmpty(i.replies)" id="replies">
+                  <div *ngFor="let j of i.replies" id="reply">
+                    <p id="data">{{j.date}}</p>
+                    <p id="data"><b>{{j.username}}:</b> {{j.comment}}</p>
+                  </div>
+
+                </div>
+                
+                  
+              </div>
+                
+
+          </div>
+          
+
+        
       </table>
     </div>
-  </body>
-</html>
+  <!-- </body>
+</html> -->

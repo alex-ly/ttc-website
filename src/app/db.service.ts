@@ -48,9 +48,23 @@ export class DBService {
     return this.http.get(this.inquiryUrl);
   }
 
+  getUserInquiries(info){
+    //console.log(info);
+    
+    return this.http.post('http://localhost:3000/userInquiries',info);
+  }
+
   addInquiry(info){
-    return this.http.post('http://localhost:3000/sendComment', info);
+    return this.http.post('http://localhost:3000/sendInquiry', info);
   
+  }
+
+  deleteInquiry(post){
+    return this.http.post('http://localhost:3000/deletePost',post);
+  }
+
+  replyInquiry(reply){
+    return this.http.post('http://localhost:3000/sendReply',reply);
   }
 
 

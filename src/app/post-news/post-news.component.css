@@ -1,0 +1,25 @@
+#banner{
+    border: solid 5px black;
+    text-align: center;
+    margin-bottom: 10px;
+    height: 100px;
+    background: white;
+    font-family: "Courier New"
+}
+
+#left-img{
+    float:left;
+    height: 100%
+}
+
+
+body{
+    background: #990000;
+}
+
+
+
+form{
+    margin: 0px 20px;
+}
+

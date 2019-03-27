@@ -1,3 +1,4 @@
+import { LoginService } from './../login.service';
 import { DBService } from './../db.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,9 +11,11 @@ import { Router } from '@angular/router';
 export class PostNewsComponent{
 
   constructor(private router:Router,
-    private dbService:DBService) { }
+    private dbService:DBService,
+    private loginService:LoginService) { }
 
   submit(info){
+    info['username']=this.loginService.currentUser.username;
     this.dbService.addNews(info).subscribe(result=>{
       if (result){
         //console.log(this.loginService.currentUser);

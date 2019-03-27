@@ -16,11 +16,11 @@ export class LoginComponent {
     signIn(credentials) {
       console.log(`Credentials: `+JSON.stringify(credentials));
       console.log(credentials);
-      
-      
-      //this.loginService.login(JSON.stringify(credentials))
-      this.loginService.login(credentials)
-      
+      this.checkValid(credentials);
+      if(!this.invalidLogin){
+        //this.loginService.login(JSON.stringify(credentials))
+        this.loginService.login(credentials)
+        
         .subscribe(result => { 
           if (result){
             //console.log(this.loginService.currentUser);
@@ -29,6 +29,25 @@ export class LoginComponent {
           }else  
             this.invalidLogin = true; 
         });
+
+      }
+      
+      
+      
+    }
+
+    checkValid(credentials){
+      console.log(credentials);
+      
+      if(credentials.username=="" 
+      || credentials.password==""){
+        //console.log('hi');
+        
+        this.invalidLogin=true;
+      }else{
+        this.invalidLogin=false;
+      }
+    
     }
 
   
