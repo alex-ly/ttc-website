@@ -9,12 +9,6 @@ a:hover{
     text-decoration: none;
 }
 
-nav{
-    background: #ff9966;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: solid 2px black;
-}
 
 #banner{
     border: solid 5px black;
@@ -25,24 +19,20 @@ nav{
     font-family: "Courier New";
 }
 
+h1{
+    margin-top: 15px;
+}
+
 #presto{
     height:100%;
     float:left;
 }
 
 body{
-    background: #990000;
+    background: #ffffff;
 }
 
-footer{
-    background: white;
-    width:100%;
-    position: fixed;
-    bottom: 0px;
-    text-align: center;
-    border-top:solid 5px black;
-    font-family: "Trebuchet MS";
-}
+
 
 #container{
     margin-top: 50px;

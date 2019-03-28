@@ -71,7 +71,7 @@ footer{
 }
 
 #corporate{
-    background: rgb(0,255,0);
+    background: rgb(7, 216, 7);
     width: 100%;
     /* border: solid 2px black; */
     margin-bottom: 10px;
@@ -80,7 +80,7 @@ footer{
 }
 
 #charter{
-    background: rgb(0,255,0);
+    background: rgb(7,216,7);
     
     width: 45%;
     /* border: solid 2px black; */
@@ -96,7 +96,7 @@ footer{
 
 
 #article{
-    background: rgb(0,255,0);
+    background: rgb(7,216,7);
     
     width: 45%;
     /* border: solid 2px black; */

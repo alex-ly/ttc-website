@@ -6,9 +6,15 @@
     background: white;
     font-family: "Courier New"
 }
+h1{
+    margin-top: 15px;
+}
+
 
 body{
-    background: #990000;
+    /* background: #56195c; */
+    background-image: url("/assets/images/newspaper.jpg")
+
 }
 
 a{
@@ -86,14 +92,7 @@ footer{
     display: none;
 }
 
-#logoutBtn{
-    /* //position: absolute; */
-    margin-right: 30px;
-    margin-top: 10px;
-    width: 70px;
-    height: 20px;
-    float: right;
-}
+
 
 
 @media only screen and (max-width: 640px){
@@ -105,4 +104,9 @@ footer{
 
 td{
     width: 100%;
+    transition: 0.3s;
+}
+
+td:hover{
+    font-size: 20px;
 }

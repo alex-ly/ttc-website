@@ -6,6 +6,9 @@
     background: white;
     font-family: "Courier New"
 }
+h1{
+    margin-top: 15px;
+}
 
 #left-img{
     float:left;
