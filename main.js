@@ -38,8 +38,16 @@ app.use(session({
 
 var inquirySchema=new Schema({
     subject: String,
+    username: String,
     date: String,
     body: String,
+    active: Boolean,
+    replies:[{
+        username:String,
+        comment:String,
+        date:String,
+        sortDate: Number,
+    }],
     time: Date
 }, {collection: 'inquiries'});
 var Inquiry = mongoose.model('inquiry',inquirySchema);
@@ -61,6 +69,12 @@ var newsSchema =new Schema({
     author: String,
     date: String,
     sortDate: Number,
+    // comments:[{
+    //     username:String,
+    //     date:String,
+    //     comment:String,
+    //     sortDate: Number
+    // }],
     title: String
 
 }, {collection: 'news'});
@@ -69,7 +83,6 @@ var News=mongoose.model('article',newsSchema);
 const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const daysOfWeek=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
-const adminPassword='Langrisser';
 
 //Create the server 
 
@@ -438,10 +451,7 @@ app.post('/login',function(req,res){
 // });
 
 app.post('/log',function(req,res){
-    console.log(req.body);
-    // let email= req.body.email;
-    //  let pass = req.body.password;
-    //  console.log(email);
+    //console.log(req.body);
     User.findOne({username: req.body.username}).then(function(user){
         if(!user) {
             return res.sendStatus(401)
@@ -452,7 +462,7 @@ app.post('/log',function(req,res){
             
             //if(req.body.password === user.password){
                 let admin=false;
-                if(user.type=="admin"){
+                if(user.type=="Admin"){
                     admin=true;
                 }
                 var token = jwt.sign({userID: user.id, username:req.body.username, admin:admin}, 'todo-app-super-shared-secret', {expiresIn: '2h'});
@@ -466,9 +476,6 @@ app.post('/log',function(req,res){
      }).catch(function(err){
          console.log(err);
      })
-
-
-
 });
 
 app.post('/register',function(req,res){
@@ -478,15 +485,11 @@ app.post('/register',function(req,res){
     var type=req.body.type;
     //var password=req.body.password;
     var password=bcrypt.hashSync(req.body.password);
-    console.log(req.body);
+    //console.log(req.body);
     
     //res.writeHead(200, {"Content-Type": "text/html"})
             
-    if(!['rider','admin'].includes(type.toLowerCase())){
-        console.log('invalid user type');
-        
-        res.sendStatus(401);
-    }else if (req.body.password != req.body.password2){
+    if (req.body.password != req.body.password2){
         console.log('passwords do not match');
         
         res.sendStatus(401);
@@ -510,7 +513,10 @@ app.post('/register',function(req,res){
             }else{
                 let adminPass='langrisser';
                 let admin=false;
-                if(user.type=="admin"){
+                    
+                if(user.type=="Admin"){
+                    
+
                     if(req.body.adminPass==adminPass){
                         admin=true;
                         user.save();
@@ -525,7 +531,8 @@ app.post('/register',function(req,res){
                             console.log('incorrect admin password');
                             
                             res.sendStatus(401);
-                        }                    
+                        }
+                                            
                 }else{
                     user.save();
                     req.session.username = username;
@@ -545,15 +552,11 @@ app.post('/register',function(req,res){
                         
             }
         });
-
-    }
-    
-    //res.render('/');
-
+    }    
 });
 
 //send inquiry
-app.post('/sendComment',function(req,res){
+app.post('/sendInquiry',function(req,res){
     let subject=req.body.subject;
     let comment=req.body.content;
     //console.log(subject);
@@ -564,18 +567,18 @@ app.post('/sendComment',function(req,res){
     let d=new Date();
 
     var newComment={subject: subject,
+                    username: req.body.username,
+                    active:true,
+                    replies:[],
                     date: `${daysOfWeek[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} ${numeral(d.getHours()).format('00')}:${numeral(d.getMinutes()).format('00')}`,
                     body: comment
                     };
+    
     var inquiry=new Inquiry(newComment);
-    //console.log(inquiry.subject);
-    //console.log(inquiry.date);
-    //console.log(inquiry.body);
+    console.log(inquiry);
     inquiry.save(function(e){
         if(e){
             console.log('error');
-            
-
         }else{
             /*Inquiry.find({}).then(function(results){
             */
@@ -627,6 +630,83 @@ app.post('/postNews',function(req,res){
         });
     })     
     
+});
+
+app.post('/deletePost',function(req,res){
+    let id=req.body._id;
+    //console.log(id);
+    
+    // Inquiry.findByIdAndUpdate(id,function(e,r){
+        
+    //     if(e) res.sendStatus(500);
+    //     r.active=false;
+
+    //     console.log(r);
+        
+    //     res.sendStatus(200);
+    // });
+    Inquiry.findByIdAndUpdate(id,{$set:{active:false}},function(e){
+        if(e) return res.sendStatus(500);
+        return res.sendStatus(200);
+    });
+
+});
+
+// app.post('/sendComment',function(req,res){
+//     News.findById(req.body.id,function(e,r){
+//         let comments=r.comments;
+//         let d=new Date();
+//         let comment={
+//             username:req.body.username,
+//             comment:req.body.comment,
+//             date: `${daysOfWeek[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} ${numeral(d.getHours()).format('00')}:${numeral(d.getMinutes()).format('00')}`,
+//             sortDate: parseInt(`${d.getFullYear()}${d.getMonth()}${d.getDate()}${numeral(d.getHours()).format('00')}${numeral(d.getMinutes()).format('00')}`)            
+//         }
+//         comments.splice(0,0,comment);
+//         News.findByIdAndUpdate(id,{$set:{comments:comments}},function(e){
+//             if(e) return res.sendStatus(500);
+//             return res.sendStatus(200);
+//         });
+//     });
+
+// });
+
+app.post('/sendReply',function(req,res){
+    console.log(req.body);
+    
+    Inquiry.findById(req.body.id,function(e,r){
+        if(e) return res.sendStatus(500);
+            
+        console.log(r);
+        
+        let replies=[];
+        
+        if(r.replies!=null){
+            replies=r.replies;
+        } 
+        let d=new Date();
+        let reply={
+            username:req.body.username,
+            comment:req.body.comment,
+            date: `${daysOfWeek[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()} ${numeral(d.getHours()).format('00')}:${numeral(d.getMinutes()).format('00')}`,
+            sortDate: parseInt(`${d.getFullYear()}${d.getMonth()}${d.getDate()}${numeral(d.getHours()).format('00')}${numeral(d.getMinutes()).format('00')}`)            
+        }
+        replies.splice(0,0,reply);
+        Inquiry.findByIdAndUpdate(req.body.id,{$set:{replies:replies}},function(e){
+            if(e) return res.sendStatus(500);
+            return res.sendStatus(200);
+        });
+    });
+});
+
+
+app.post('/userInquiries',function(req,res){
+    //console.log(req.body);
+    
+    Inquiry.find({username:req.body.username},function(e,r){
+        res.json(r);
+    });
+
 });
 
 // setup the HTTP listener
