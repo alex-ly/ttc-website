@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit{
     
   }
 
-  constructor(private service:DBService,
+  constructor(private service:DBService
     ) { }
 
   

@@ -51,11 +51,11 @@ export class LoginService {
  
          let jwt = new JwtHelper();
          this.currentUser = jwt.decodeToken(localStorage.getItem('token'));
-         if(this.currentUser.admin){
-           this.admin=true;
-         }else{
-           this.admin=false;
-         }
+        //  if(this.currentUser.admin){
+        //    this.admin=true;
+        //  }else{
+        //    this.admin=false;
+        //  }
          console.log(this.currentUser);
          
  
@@ -79,11 +79,11 @@ export class LoginService {
  
          let jwt = new JwtHelper();
          this.currentUser = jwt.decodeToken(localStorage.getItem('token'));
-         if(this.currentUser.admin){
-           this.admin=true;
-         }else{
-           this.admin=false;
-         }
+        //  if(this.currentUser.admin){
+        //    this.admin=true;
+        //  }else{
+        //    this.admin=false;
+        //  }
          console.log(this.currentUser);
          
  
@@ -100,7 +100,7 @@ export class LoginService {
   logout(){
     localStorage.removeItem('token');
     this.currentUser=null;
-    this.admin=false;
+    //this.admin=false;
 
     this.router.navigate(['/']);
   }

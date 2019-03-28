@@ -23,8 +23,9 @@ nav{
 
 #map{
     width:100%;
-    border: solid 5px black;
+    /* border: solid 5px black; */
     background-color: #990000;
+    /* margin: 0px 20px 0px 20px; */
 }
 
 #train{

@@ -2,6 +2,11 @@ a{
     padding: 5px;
     color: black;
     font-family: Verdana;
+    height: 100%
+}
+
+a:hover{
+    text-decoration: none;
 }
 
 nav{
@@ -42,27 +47,45 @@ footer{
 #container{
     margin-top: 50px;
     background: white;
-    border: solid 2px black;
+    /* border: solid 2px black; */
     padding: 5px;
+    margin-bottom: 100px;
 }
 
 h3{
-    border: solid 2px black;
+    /* border: solid 2px black; */
     width:30%;
     padding: 5px;
     font-family: cursive;
     background: #6699ff;
+    margin-top: 20px; 
     
 }
 
 #passes{
     margin-top: 20px;
-    width: 40%
+    width: 40%;
+    transition: 0.3s;
 }
 
 #tickets{
-    width:40%
+    width:40%;
+    transition: 0.3s;
 }
+
+#tickets:hover{
+    width:50%;
+    height: 20%;
+    font-size: 20px;
+}
+
+#passes:hover{
+    width:50%;
+    height: 30%;
+    font-size: 20px;
+}
+
+
 
 .first-col{
     border-right: solid 2px black;
@@ -89,12 +112,21 @@ td{
     right: 20px;
     top: 270px;
     padding: 5px;
+    transition: 0.3s;   
+}
+
+#buy:hover{
+    width: 30%;
+    background: rgb(0,200,0);
     
+
 }
 
 table{
     border-right: solid 2px black;
+    
 }
+
 
 #note{
     width: 40%;
@@ -103,6 +135,14 @@ table{
     right: 50px;
     border: solid 2px black;
     padding: 5px;
+    transition: 0.3s;
+    height: 15%;
+}
+
+#note:hover{
+    width: 45%;
+    height: 30%;
+    font-size: 20px;;
 }
 
 .curr-page{

@@ -1,5 +1,5 @@
 <h2 *ngIf="loginService.getLoggedIn()"> Welcome {{ loginService.currentUser.username }}</h2>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-warning navi">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,44 +8,44 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" routerLink="">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link a" routerLink="">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" routerLink="/map">Map</a>
+          <a class="nav-link a" routerLink="/map">Map</a>
         </li>        
         <!-- <li class="nav-item" routerLinkActive="active current">
           <a class="nav-link" [routerLink]="['/profile', profile.username]">My profile</a>
         </li> -->
         <li class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" routerLink="/news">News <span class="sr-only">(current)</span></a>
+            <a class="nav-link a" routerLink="/news">News <span class="sr-only">(current)</span></a>
           </li>
         <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" routerLink="/shop">Prices</a>
+          <a class="nav-link a" routerLink="/shop">Prices</a>
         </li>
         <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" routerLink="/about">About <span class="sr-only">(current)</span></a>
+          <a class="nav-link a" routerLink="/about">About <span class="sr-only">(current)</span></a>
         </li>
         <!-- <li class="nav-item" routerLinkActive="active current">
             <a class="nav-link" routerLink="/contact">Contact</a>
         </li> -->
         <li *ngIf="!loginService.getAdmin() && loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" routerLink="/contact">Contact</a>
+            <a class="nav-link a" routerLink="/contact">Contact</a>
         </li>
         <li *ngIf="loginService.getAdmin()" class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" routerLink="/postNews">Post News</a>
+            <a class="nav-link a" routerLink="/postNews">Post News</a>
         </li>
         <li *ngIf="loginService.getLoggedIn()" class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" routerLink="/inquiries">Inquiries</a>
+            <a class="nav-link a" routerLink="/inquiries">Inquiries</a>
         </li>
           
         <li *ngIf="loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" (click)="logout()">Logout</a>
+          <a class="nav-link a" (click)="logout()">Logout</a>
         </li>
         <li *ngIf="!loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" routerLink="/login">Login</a>
+          <a class="nav-link a" routerLink="/login">Login</a>
         </li>
         <li *ngIf="!loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" routerLink="/register">Register</a>
+            <a class="nav-link a" routerLink="/register">Register</a>
         </li>
         
         

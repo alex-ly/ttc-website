@@ -7,13 +7,13 @@
   
 <form class="form-signin" #f="ngForm" (ngSubmit)="register(f.value)">
     <label for="username">Username</label>
-    <input type="text" name="username" id="username" placeholder="Username" ngModel class="form-control" required minlength="1" (change)="checkValid(f.value)">
+    <input type="text" name="username" id="username" placeholder="Username" ngModel class="form-control" required minlength="1">
     <br />
     <label for="firstName">First Name:</label>
-    <input type="text" name="firstName" id="firstName" placeholder="First Name" ngModel class="form-control" required minlength="1" (change)="checkValid(f.value)">
+    <input type="text" name="firstName" id="firstName" placeholder="First Name" ngModel class="form-control" required minlength="1">
     <br />
     <label for="surname">Surname</label>
-    <input type="text" name="surname" id="surname" placeholder="Surname" ngModel class="form-control" required minlength="1" (change)="checkValid(f.value)">
+    <input type="text" name="surname" id="surname" placeholder="Surname" ngModel class="form-control" required minlength="1">
     <br />
     <label for="type">User type</label>
     <select class="form-control" id="type" [(ngModel)]="type" (change)="checkAdmin()"  name="type" required>
@@ -31,7 +31,7 @@
     <br />
     
     <label for="password">Password</label>
-    <input type="password" name="password" id="password" placeholder="Password" ngModel class="form-control" required minlength="1" (change)="checkValid(f.value)">
+    <input type="password" name="password" id="password" placeholder="Password" ngModel class="form-control" required minlength="1">
     <br />
     <label for="password2">Retype password</label>
     <input type="password" name="password2" id="password2" placeholder="Confirm password" ngModel class="form-control">
