@@ -1,5 +1,5 @@
 #banner{
-    border: solid 5px black;
+    border: solid 3px black;
     text-align: center;
     margin-bottom: 10px;
     height: 100px;
@@ -40,16 +40,6 @@ td{
     
     border-bottom: solid 2px black;
     padding: 20px;
-}
-
-footer{
-    background: white;
-    width:100%;
-    position: fixed;
-    bottom: 0px;
-    text-align: center;
-    border-top:solid 5px black;
-    font-family: "Trebuchet MS";
 }
 
 .curr-page{
@@ -109,4 +99,5 @@ td{
 
 td:hover{
     font-size: 20px;
+    background-color: #aac7ff
 }

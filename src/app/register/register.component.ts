@@ -11,6 +11,8 @@ export class RegisterComponent {
   invalidLogin:boolean;
   admin:boolean;
   type:string;
+  result:any;
+  invalid:any;
 
 
   constructor(private router:Router,
@@ -23,12 +25,16 @@ export class RegisterComponent {
       this.loginService.register(credentials)
     
       .subscribe(result => { 
-        if (result){
+        if (result.response===200){
           //console.log(this.loginService.currentUser);
+          this.result=result;
           
           this.router.navigate(['/']);
+          
         }else  
-          this.invalidLogin = true; 
+          this.invalidLogin = true;
+          this.result=result;
+           
       });
 
 
@@ -54,13 +60,15 @@ export class RegisterComponent {
     || credentials.firstName==""
     || credentials.surname==""
     || credentials.password==""
-    || this.type==""){
+    || credentials.type==""){
       //console.log('hi');
       
       this.invalidLogin=true;
     }else{
       this.invalidLogin=false;
     }
+    this.invalid={invalid:this.invalidLogin};
+
 
   }
 

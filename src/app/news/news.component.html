@@ -12,9 +12,9 @@
             <table>
                 <tr class="row" *ngFor='let n of news'>
                     <td>
-                        <p>{{ n.date }}</p>
-                        <p>{{ n.author }}</p>
-                        <p>{{ n.title }}</p>
+                        <p><b>Date: </b> {{ n.date }}</p>
+                        <p><b>Author: </b>{{ n.author }}</p>
+                        <p><b>Title: </b>{{ n.title }}</p>
                         
                     </td>
                 </tr>
@@ -25,7 +25,7 @@
             
         </div>
         
-        <div id="contact">
+        <div id="contact" class="card">
             <p>Follow TTC Service Alerts for more news</p>
             <a href="https://twitter.com/TTCnotices">
                 <img id="twitter" src="assets/images/twitter.png">

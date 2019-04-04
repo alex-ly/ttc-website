@@ -29,10 +29,10 @@ export class LoginService {
     console.log(credentials);
     
     //console.log(JSON.stringify(credentials));
-    let params = new HttpParams();
-    params = params.append('var1', credentials.username);
-    params = params.append('var2', credentials.password);
-    console.log(params);
+    // let params = new HttpParams();
+    // params = params.append('var1', credentials.username);
+    // params = params.append('var2', credentials.password);
+    // console.log(params);
     
 
     
@@ -87,9 +87,11 @@ export class LoginService {
          console.log(this.currentUser);
          
  
-         return true; 
+         //return true;
+         return {response: 200}; 
        }
-       else return false; 
+       //else return false
+       else return {response:500}; 
      }));
 
     

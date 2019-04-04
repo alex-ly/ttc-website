@@ -24,6 +24,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuardService } from './auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from "@auth0/angular-jwt";
+import { AngularFontAwesomeModule } from "angular-font-awesome";
 
 export function tokenGetter(){
   return localStorage.getItem('access_token');
@@ -51,6 +52,7 @@ export function tokenGetter(){
     HttpModule,
     FormsModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot([
       {path: '',component: HomeComponent},
       {path: 'map',component: MapComponent},
