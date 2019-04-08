@@ -11,8 +11,7 @@
         
         </div>
          
-        <div class="page-container">
-            <!-- <div class="col col2 box"> -->
+        <!-- <div class="page-container">
             <div class="table-left">
                 <div class="left">
                     <div class="row">
@@ -71,7 +70,6 @@
                 </div>
             </div>
         
-            <!-- <div class="col col8 last-col box"> -->
             <div class="right">
                 <div class="right-tbl">
                     <div>
@@ -79,9 +77,6 @@
                             <h2>Latest News</h2>
                         </div>
                     </div>
-                    <!-- Add 3 latest news data here
-                     -->
-                    <!-- <div ng-repeat="n in news | limitTo : 3" class="row"> -->
                       
                     <div *ngFor="let n of news" class="row">
                         <div class="data card">
@@ -94,9 +89,6 @@
                 </div>   
                 
                 <div id="pictures" class="card">
-                    <!-- <img id="bus" src="bus.jpg" />
-                    <img id="divain" src="divain.jpg" /> -->
-                    <!-- <img id="bus" src="http://localhost:4200/../Users/Alex.Ly/Documents/project-pug/bus.jpg" /> -->
                     <img id="bus" src="http://localhost:4200/assets/images/bus.jpg" class="card"/>
                     
                     <img id="train" src="assets/images/train.jpg" class="card"/>
@@ -108,8 +100,101 @@
 
         
         </div>
+         -->
+
+        <!-- Page Content -->
+<div class="container">
+
         
+        <div class="row">
+          <div class="col-lg-4 mb-4 h-100">
+                <div class="table-left">
+                        <div class="left card" id="lt">
+                            <div class="row">
+                                <div id="h" class="card-header">
+                                    <p><b>Train Arrivals:</b></p>
+                                    <br />
+                                    <p>St. Andrew</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="data card">
+                                    <p><b>Line 1</b></p>
+                                    <br />
+                                    <p><b>Northbound:</b> 2 mins</p>
+                                    <br />
+                                    <p><b>Southbound:</b> 1 min</p>
+                                </div>
+                            </div>
+                        </div>
+                            
+                            <div id="blank-row"><div><br /></div></div>
+                            <div id="blank-row"><div><br /></div></div>
+                            <div id="blank-row"><div><br /></div></div>
+                        <div class="left card" id="lt">
+                            
+                            <div class="row">
+                                <div id="h" class="card-header">
+                                    <p><b><u>Bus Arrivals:</u></b></p>
+                                    <br />
+                                    <p>St. Andrew</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="data card">
+                                    <p><b>253 Union: </b> 17 mins</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="data card">
+                                    <p><b>146 Humber: </b> 5 mins</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="data card">
+                                    <p><b>90 Bay: </b> Due</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="data card">
+                                    <p><b>4A Yorkdale: </b> 40 mins</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="data card"> 
+                                    <p><b>56 Square One: </b> 50 mins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+          </div>
+
+          <div class="col-lg-6 mb-4 offset-md-2">
+                    <div class="right-tbl card">
+                            <div>
+                                <div class="card-header l">
+                                    <h2>Latest News</h2>
+                                </div>
+                            </div>
+                              
+                            <div *ngFor="let n of news" class="row card" id='article'>
+                                <div class="card-body">
+                                  <p><b>Date:</b> {{ n.date }}</p>
+                                  <p><b>Author:</b> {{ n.author}}</p>
+                                  <p><b>Title:</b> {{ n.title }}</p>
+          
+                                </div>
+                            </div>
+                        </div>   
+                        
+            <!-- </div> -->
+          </div>
+          
         
+      </div>
+      </div>
+
 
     </body>
 

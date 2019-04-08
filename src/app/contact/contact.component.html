@@ -1,18 +1,53 @@
-<div id="banner">
-    <img id="left-img" src="assets/images/ttc.jpg" />
-    <h1>Contact TTC</h1>
-
-</div>
-<div *ngIf="invalid" class="alert alert-danger">Invalid inquiry.</div>
-    
-<form class="form-signin" (ngSubmit)="submit(f.value)" #f="ngForm">
-    <!-- <label for="subject">Subject:</label> -->
-    <input type="text" name="subject" id="subject" placeholder="Subject" class="form-control" ngModel required>
-    <br />
+<body>
+        <div id="banner">
+                <img id="left-img" src="assets/images/ttc.jpg" />
+                <h1>Contact TTC</h1>
             
-    <!--<input type="text" name="content" id="content" placeholder="Comment here">
-    -->
-    <textarea name="content" id="content" placeholder="Comment here" class="form-control" ngModel required></textarea>
-    <br />
-    <button id="submitBtn" class="btn btn-primary" type="submit" [disabled]="invalid">Submit</button>
-</form>
+            </div>
+            <div *ngIf="invalid" class="alert alert-danger">Invalid inquiry.</div>
+                
+            <!-- <form class="form-signin" (ngSubmit)="submit(f.value)" #f="ngForm">
+                <input type="text" name="subject" id="subject" placeholder="Subject" class="form-control" ngModel required>
+                <br />
+                        
+                <textarea name="content" id="content" placeholder="Comment here" class="form-control" ngModel required></textarea>
+                <br />
+                <button id="submitBtn" class="btn btn-primary" type="submit" [disabled]="invalid">Submit</button>
+            </form> -->
+            
+            <div class="container">
+                    <div class="row">
+                      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                        <div class="card card-signin my-5">
+                          <div class="card-body">
+                            <form class="form-signin" #f="ngForm" (ngSubmit)="submit(f.value)">
+                              
+                              <div class="form-label-group">
+                                <!-- <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                <label for="inputEmail">Email address</label> -->
+                                  <input type="text" id="subject" name="subject" ngModel class="form-control" placeholder="Subject" required autofocus>
+                                  <label for="subject">Subject</label>
+                              </div>
+                
+                              <div class="form-label-group">
+                                    <textarea name="content" id="content" placeholder="Comment here" class="form-control" ngModel required></textarea>
+                
+                                
+                              </div>
+                
+                              <!-- <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Remember password</label>
+                              </div> -->
+                              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button>
+                              
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            
+    
+</body>
+

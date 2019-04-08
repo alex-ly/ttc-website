@@ -29,14 +29,16 @@ h1{
 }
 
 body{
-    background: #ffffff;
+    /* background: #ffffff; */
+    background: linear-gradient(to bottom, rgb(190, 8, 48), rgb(253, 253, 253));
+    
 }
 
 
 
 #container{
     margin-top: 50px;
-    background: white;
+    /* background: white; */
     /* border: solid 2px black; */
     padding: 5px;
     margin-bottom: 100px;
@@ -47,7 +49,7 @@ h3{
     width:30%;
     padding: 5px;
     font-family: cursive;
-    background: #6699ff;
+    background: #dfe9a6da;
     margin-top: 20px; 
     
 }
@@ -56,11 +58,13 @@ h3{
     margin-top: 20px;
     width: 40%;
     transition: 0.3s;
+    background: white;
 }
 
 #tickets{
     width:40%;
     transition: 0.3s;
+    background: white;
 }
 
 #tickets:hover{

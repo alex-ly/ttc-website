@@ -4,21 +4,25 @@ footer{
     position: fixed;
     bottom: 0px;
     text-align: center;
-    border-top:solid 2px black;
     font-family: "Trebuchet MS";
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    height: 13%;
 }
 
 nav{
-    background-color: #ffa500;
+    /* background-color: #ffa500; */
     padding: 5px;
     margin-bottom: 10px;
-    border: solid 2px black;
+    /* border: solid 2px black; */
 }
 
 a{
     padding: 5px;
     color: black;
     font-family: Verdana;
+}
+
+#sticky-footer {
+    flex-shrink: none;
 }
 

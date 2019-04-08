@@ -31,8 +31,8 @@ nav{
 #h{
     /* margin-left: 15px; */
     padding: 10px;
-    height: 150px;
-    background: #6699ff;
+    /* height: 150px; */
+    /* background: #6699ff; */
     /* border: solid 2px black; */
     font-family: sans-serif;
     width: 100%;
@@ -41,8 +41,8 @@ nav{
 
 .l{
     padding: 10px;
-    height: 150px;
-    background: #6699ff;
+    /* height: 150px; */
+    /* background: #6699ff; */
     /* border: solid 2px black; */
     font-family: sans-serif;
     width: 100%;
@@ -61,10 +61,9 @@ nav{
 } */
 
 
-body{
-    /* background-color: #990000; */
+/* body{
     height:100%;
-}
+} */
 
 
 #banner{
@@ -92,43 +91,48 @@ h1{
 }
 
 .left{
-    width: 20%;
-    float: left;
+    width: 100%;
+    /* float: left; */
     margin-right: 10px;
     margin-bottom: 100px;
     
 }
 
 .right{
-    width:70%;
-    float:right;
-    height:500px;
+    width:100%;
+    /* float:right; */
+    /* height:70%; */
     
 }
 
 .right-tbl{
-    width:80%;
-    height: 100%;
+    width:100%;
+    /* height: 100%; */
     margin-bottom: 50px;
     /* border-radius: 10px; */
 }
 
 body{
     /* background: crimson; */
-    height: 1500px;;
+    height: 1200px;
+    /* background: #007bff; */
+    background: linear-gradient(to bottom, rgb(190, 8, 48), rgb(253, 253, 253));
     /* margin-bottom: 50px; */
 }
+
+
 
 .data{
     padding: 20px 10px;
     /* border-bottom: solid 1px black; */
     width: 100%;
-    margin-left: 27px;
+    margin-left: 25px;
     transition: 0.3s;
+    background: white !important;
     
 }
 
-.data:hover{
+#article:hover{
     background-color: #aac7ff;
 }
 
@@ -165,7 +169,7 @@ body{
 }
 
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 950px){
     .right{
         float: left;
         
@@ -174,6 +178,10 @@ body{
     #pictures{
         margin-bottom: 100px;
         /* margin-top: 100px; */
+    }
+
+    body{
+        height: 2000px;
     }
     
 }
@@ -184,4 +192,26 @@ h1{
 
 #table-left{
     width: 100%;
+}
+
+#article{
+    padding: 20px 10px;
+    /* border-bottom: solid 1px black; */
+    width: 100%;
+    margin-left: 25px;
+    transition: 0.3s;
+    margin-left: 0px;
+    background: white;
+}
+
+.card{
+    background: transparent;
+}
+
+#lt{
+    border:none;
+}
+
+.card-header{
+    background: wheat !important;
 }

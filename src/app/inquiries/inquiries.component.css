@@ -11,8 +11,18 @@ h1{
     margin-top: 15px;
 }
 
+h2{
+    background: #007bff;
+    
+    background: linear-gradient(to right, rgb(249, 249, 250), #33AEFF);
+    width: 100%;
+}
+
 body{
-    background: #990000;
+    /* background: #990000; */
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+    height: 800px;
 }
 
 a{
@@ -52,6 +62,9 @@ td{
 #active{
     background-color: bisque;
     width:inherit;
+    padding: 10px;
+    border-radius: 5px;
+    
 }
 
 
@@ -59,7 +72,7 @@ td{
     /* border-bottom: solid 2px black;     */
     width: 100%;
     /* margin-left: 10px; */
-    padding: 10px;
+    /* padding: 10px; */
     display: block;
 
 }

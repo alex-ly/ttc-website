@@ -32,7 +32,9 @@ nav{
 }
 
 body{
-    background: #990000;
+    /* background: #990000; */
+    background: linear-gradient(to bottom, rgb(190, 8, 48), rgb(253, 253, 253));
+    
     height: 100%;
 }
 
@@ -56,7 +58,7 @@ footer{
 }
 
 #buttons{
-    background: white;
+    /* background: white; */
     width: 90%;
     margin: auto;
     margin-top:50px;

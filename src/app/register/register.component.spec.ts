@@ -79,36 +79,32 @@ describe('RegisterComponent', () => {
     expect(component.result).toEqual({response:200});
   });
 
-  it('should invalidate register requests if any fields are null',()=>{
-    // //calling method
-    component.checkValid({
-      username:'an',
-      firstName:'',
-      surname:'l',
-      type:'Rider',
-      password:'a',
-      password2:'a'
-    });
+  // it('should invalidate register requests if any fields are null',()=>{
+  //   // //calling method
+  //   component.checkValid({
+  //     username:'an',
+  //     firstName:'',
+  //     surname:'l',
+  //     type:'Rider',
+  //     password:'a',
+  //     password2:'a'
+  //   });
 
-    expect(component.invalidLogin).toBe(true);
-  });
+  //   expect(component.invalidLogin).toBe(true);
+  // });
 
-  it('should validate register requests if all fields are not null',()=>{
-    // //calling method
-    component.checkValid({
-      username:'an',
-      firstName:'a',
-      surname:'l',
-      type:'Rider',
-      password:'a',
-      password2:'a'
-    });
+  // it('should validate register requests if all fields are not null',()=>{
+  //   // //calling method
+  //   component.checkValid({
+  //     username:'an',
+  //     firstName:'a',
+  //     surname:'l',
+  //     type:'Rider',
+  //     password:'a',
+  //     password2:'a'
+  //   });
 
-    expect(component.invalidLogin).toBe(false);
-  });
-
-  
-
-
+  //   expect(component.invalidLogin).toBe(false);
+  // });
 
 });

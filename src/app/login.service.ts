@@ -112,7 +112,10 @@ export class LoginService {
   }
 
   getAdmin(){
+    
     if(this.currentUser==null) return false;
+    //console.log(this.currentUser);
+    
     return this.currentUser.admin;
   }
 }

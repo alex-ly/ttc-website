@@ -1,58 +1,78 @@
 <h2 *ngIf="loginService.getLoggedIn()"> Welcome {{ loginService.currentUser.username }}</h2>
-<nav class="navbar navbar-expand-lg navbar-light bg-warning navi">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navi">
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link a" routerLink=""><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link a" routerLink="/map"> <span class="fa fa-map"></span> Map</a>
-        </li>        
-        <!-- <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link" [routerLink]="['/profile', profile.username]">My profile</a>
-        </li> -->
-        <li class="nav-item" routerLinkActive="active current">
-            <a class="nav-link a" routerLink="/news"> <span class="fa fa-newspaper-o"></span> News <span class="sr-only">(current)</span></a>
+    <!-- <div class="container"> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Links
+            </a>
+            <div class="dropdown-menu dropdown-menu-right animate slide-in" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item nav-link a" routerLink=""><span class="fa fa-home"></span> Home</a>
+              <a class="dropdown-item nav-link a" routerLink="/map"><span class="fa fa-map"></span> Map</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item nav-link a" routerLink="/news"><span class="fa fa-newspaper-o"></span> News</a>
+              <a class="dropdown-item nav-link a" routerLink="/shop"><span class="fa fa-dollar"></span> Prices</a>
+              <a class="dropdown-item nav-link a" routerLink="/news"><span class="fa fa-question"></span> About</a>
+
+              <a *ngIf="!loginService.getAdmin() && loginService.getLoggedIn()" class="dropdown-item nav-link a" routerLink="/news"><span class="fa fa-comments"></span> Contact</a>
+              <a *ngIf="loginService.getAdmin()" class="dropdown-item nav-link a" routerLink="/news"><span class="fa fa-newspaper-o"></span> Post News</a>
+              <a *ngIf="loginService.getLoggedIn()" class="dropdown-item nav-link a" routerLink="/news"><span class="fa fa-envelope"></span> Inquiries</a>
+              <a *ngIf="loginService.getLoggedIn()" class="dropdown-item nav-link a" routerLink="/news"><span class="fa fa-power-off"></span> Logout</a>
+              <a *ngIf="!loginService.getLoggedIn()" class="dropdown-item nav-link a" routerLink="/news"><span class="fa fa-power-off"></span> Login</a>
+              <a *ngIf="!loginService.getLoggedIn()" class="dropdown-item nav-link a" routerLink="/news"><span class="fa fa-plue"></span> Register</a>
+              
+            </div>
           </li>
-        <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link a" routerLink="/shop"><span class="fa fa-dollar"></span> Prices</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active current">
-          <a class="nav-link a" routerLink="/about"><span class="fa fa-question"></span> About <span class="sr-only">(current)</span></a>
-        </li>
-        <!-- <li class="nav-item" routerLinkActive="active current">
-            <a class="nav-link" routerLink="/contact">Contact</a>
-        </li> -->
-        <li *ngIf="!loginService.getAdmin() && loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
-            <!-- <span class="glyphicon glyphicon-envelope">&#x2709;</span> -->
-            <a class="nav-link a" routerLink="/contact"><span class="fa fa-comments"></span> Contact</a>
-        </li>
-        <li *ngIf="loginService.getAdmin()" class="nav-item" routerLinkActive="active current">
-            <a class="nav-link a" routerLink="/postNews"><span class="fa fa-newspaper-o"></span> Post News</a>
-        </li>
-        <li *ngIf="loginService.getLoggedIn()" class="nav-item" routerLinkActive="active current">
-            <a class="nav-link a" routerLink="/inquiries"> <span class="fa fa-envelope"></span> Inquiries</a>
-        </li>
+        </ul>
+      </div> -->
+
+
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" routerLinkActive="active current">
+            <a class="nav-link a" routerLink=""><span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" routerLinkActive="active current">
+            <a class="nav-link a" routerLink="/map"> <span class="fa fa-map"></span> Map</a>
+          </li>        
+          <li class="nav-item" routerLinkActive="active current">
+              <a class="nav-link a" routerLink="/news"> <span class="fa fa-newspaper-o"></span> News <span class="sr-only">(current)</span></a>
+            </li>
+          <li class="nav-item" routerLinkActive="active current">
+            <a class="nav-link a" routerLink="/shop"><span class="fa fa-dollar"></span> Prices</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active current">
+            <a class="nav-link a" routerLink="/about"><span class="fa fa-question"></span> About <span class="sr-only">(current)</span></a>
+          </li>
+          <li *ngIf="!loginService.getAdmin() && loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
+              <a class="nav-link a" routerLink="/contact"><span class="fa fa-comments"></span> Contact</a>
+          </li>
+          <li *ngIf="loginService.getAdmin()" class="nav-item" routerLinkActive="active current">
+              <a class="nav-link a" routerLink="/postNews"><span class="fa fa-newspaper-o"></span> Post News</a>
+          </li>
+          <li *ngIf="loginService.getLoggedIn()" class="nav-item" routerLinkActive="active current">
+              <a class="nav-link a" routerLink="/inquiries"> <span class="fa fa-envelope"></span> Inquiries</a>
+          </li>
+            
+          <li *ngIf="loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
+            <a class="nav-link a" (click)="logout()"><span class="fa fa-power-off"></span> Logout</a>
+          </li>
+          <li *ngIf="!loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
+            <a class="nav-link a" routerLink="/login"><span class="fa fa-power-off"></span> Login</a>
+          </li>
+          <li *ngIf="!loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
+              <a class="nav-link a" routerLink="/register"><span class="fa fa-plus"></span> Register</a>
+          </li>          
           
-        <li *ngIf="loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
-          <a class="nav-link a" (click)="logout()"><span class="fa fa-power-off"></span> Logout</a>
-        </li>
-        <li *ngIf="!loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
-          <a class="nav-link a" routerLink="/login"><span class="fa fa-power-off"></span> Login</a>
-        </li>
-        <li *ngIf="!loginService.getLoggedIn()"class="nav-item" routerLinkActive="active current">
-            <a class="nav-link a" routerLink="/register"><span class="fa fa-plus"></span> Register</a>
-        </li>
-        
-        
-      
-        
-      </ul>
-      
-    </div>
+        </ul>
+      </div>
+    <!-- </div> -->
   </nav>
+
+    
